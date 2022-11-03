@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project Backlog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/shared.js"></script>
+    <script src="js/project_backlog.js"></script>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="logo">chartZ</div>
+            <div>
+                <ul class="nav__link--list">
+                    <li><a href="project_backlog.html" class="nav__link--anchor-primary">Project backlog</a></li>
+                    <li><a href="sprint_board.html" class="nav__link--anchor">Sprint Board</a></li>
+                    <li><a href="team_members.html" class="nav__link--anchor">Team Members</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Tag Checklist -->
+        <main class="grid">
+            <article class="text" style="text-align:center">
+                <p>Tag Filter:
+                    <select id="tagFilter" onclick="filterDropdownPressed()">
+
+                    </select>
+                </p>
+            </article>
+        </main>
+
+        <!-- Accent-colored raised button with ripple -->
+        <section>
+            <div id="newTaskButton" class="addNewTaskButton-container">
+                <button onclick="openAddTaskWindow()"><b>Add Task</b></button>
+            </div>
+        </section>
+
+        <main id="newTask" class="grid" style="display:none">
+            <article class="text">
+                <h2 id="taskHeader">New Task</h2>
+
+                <!-- Task Title input -->
+                <p for="title">Title: <input id="title" type="text" name="title"></p>
+
+                <!-- Task Description -->
+                <label for="taskDescription">Task Description:</label><br>
+                <textarea id="taskDescription" name="taskDescription" cols="40" rows="6"></textarea>
+
+                <br>
+
+                <!--Task type-->
+                <p>Task Type:
+                    <select id="taskType">
+                        <option value="Choose an Option" disabled selected hidden>Choose an Option</option>
+                        <option value="User Story">User Story</option>
+                        <option value="Bug">Bug</option>
+                    </select>
+                </p>
+
+                <!--Priority-->
+                <p>Task Priority:
+                    <select id="priority">
+                        <option value="Choose an Option" disabled selected hidden>Choose an Option</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </p>
+
+                <!--Tag-->
+                <p>Tag:
+                    <select id="tag">
+                        <option value="Choose an Option" disabled selected hidden>Choose an Option</option>
+                        <option name="tag" value="UI">UI</option>
+                        <option name="tag" value="Core">Core</option>
+                        <option name="tag" value="Testing">Testing</option>
+                    </select>
+                </p>
+
+                <!-- Story Points -->
+                <p>Story Point(s):
+                    <input id="storyPoints" type="number" min="0" name="storyPoints" value="1"
+                        onkeypress="return isNumber(event)">
+                </p>
+
+                <!-- Assignee -->
+                <p>Assignee Name:
+                    <select id="assigneeName" name="assigneeName">
+                    </select>
+                </p>
+
+                <!--Progress-->
+                <p>Task Progress:
+                    <select id="progress">
+                        <option value="Choose an Option" disabled selected hidden>Choose an Option</option>
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </p>
+
+                <div class="buttons">
+                    <a id="cancelButton" class="lightRedBtn" onclick="closeAddTaskWindow()">Cancel</a>
+                    <a id="Save" class="lightPurpleBtn" onclick="addNewTask()">Save</a>
+                </div>
+            </article>
+        </main>
+
+        <!-- For Expanding a Task -->
+        <main id="modal" class="modal">
+            <article id="expanded">
+
+            </article>
+        </main>
+
+        <!-- For Listing of Tasks -->
+        <main id="tasks" class="grid">
+
+        </main>
+</body>
+
+</html>

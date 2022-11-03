@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sprint</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/shared.js"></script>
+    <script src="js/project_backlog.js"></script>
+    <script src="js/sprint.js"></script>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="logo">chartZ</div>
+            <div>
+                <ul class="nav__link--list">
+                    <li><a href="project_backlog.html" class="nav__link--anchor">Project backlog</a></li>
+                    <li><a href="sprint_board.html" class="nav__link--anchor-primary">Sprint Board</a></li>
+                    <li><a href="team_members.html" class="nav__link--anchor">Team Members</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Sprint name-->
+        <div><h1 id="sprintName"></h1></div>
+
+        <!--Durations-->
+        <div><h3 id="date"></h3></div>
+
+        <div class="sprint__container">
+            <!--To Do List-->
+            <div class="sprint">
+                <h1>To Do</h1>
+                <div id="toDoContent">
+                    
+                </div>
+            </div>
+            <!--In Progress list-->
+            <div class="sprint">
+                <h1>In Progress</h1>
+                <div id="inProgressContent">
+
+                </div>
+            </div>
+
+            <!--Completed list-->
+            <div class="sprint">
+                <h1>Done</h1>
+                <div id="doneContent">
+
+                </div>
+            </div>
+
+            <!--Button for adding tasks to a sprint-->
+            <div class="addNewTaskButton-container" id="editSprintTasks" style="display: none">
+                
+            </div>
+        </div>
+    </section>
+    <!-- For Expanding a Task -->
+    <main id="modal" class="modal">
+        <article id="expanded">
+
+        </article>
+    </main>
+
+    <!-- For Time tracking inputs-->
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close__btn" onclick="togglePopup()">&times;</div>
+            <h1 class="addSprint__title">Log Your Time</h1>
+            <div class="content__details">
+
+                <!-- Hours -->
+                <p>Hours:
+                    <input id="hours" type="number" min="0" name="hours" value="0"
+                        onkeypress="return isNumber(event)">
+                </p>
+
+                <!-- Minutes -->
+                <p>Minutes:
+                    <input id="minutes" type="number" min="0" max="59" name="hours" value="0"
+                        onkeypress="return isNumber(event)">
+                </p>
+                <p>Date:</p>
+                <p class="Sprint__duaration">
+                    <input type="date" id="logDate">
+                </p>
+                <button class="lightPurpleBtn" onclick="logTime()">Log</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

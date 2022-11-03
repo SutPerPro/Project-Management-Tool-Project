@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sprint Board</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/shared.js"></script>
+    <script src="js/sprint_board.js"></script>
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="logo">chartZ</div>
+            <div>
+                <ul class="nav__link--list">
+                    <li><a href="project_backlog.html" class="nav__link--anchor">Project backlog</a></li>
+                    <li><a href="sprint_board.html" class="nav__link--anchor-primary">Sprint Board</a></li>
+                    <li><a href="team_members.html" class="nav__link--anchor">Team Members</a></li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close__btn" onclick="togglePopup()">&times;</div>
+                <h1 class="addSprint__title">Create Sprint</h1>
+                <div class="content__details">
+
+                    <p>Sprint Name: <input id="sprintName" type="text"></p>
+                    <p>Status:
+                        <select id="sprintStatus">
+                            <option value="Choose an Option" disabled selected hidden>Choose an Option</option>
+                            <option value="To Do">To Start</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Done">Done</option>
+                        </select>
+                    </p>
+                    <p>Duration:</p>
+                    <p class="Sprint__duaration">From:
+                        <input type="date" id="startDate">
+                        To:
+                        <input type="date" id="endDate">
+                    </p>
+                    <button class="lightPurpleBtn" onclick="addSprint()">Insert</button>
+                </div>
+            </div>
+        </div>
+        <button class="lightPurpleBtn" onclick="togglePopup()">Add New</button>
+
+        <div class="row">
+
+            <table class="Table">
+                <thead>
+                    <tr class="table__row">
+                        <th class="table__head">Sprint</th>
+                        <th class="table__head">Status</th>
+                        <th class="table__head">Duration</th>
+                        <th class="table__button">
+                            <div class="table__button"></div>
+                        </th>
+                        <th class="table__button">
+                            <div class="table__button"></div>
+                        </th>
+                        <th class="table__button">
+                            <div class="table__button"></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="sprints">
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</body>
+
+</html>

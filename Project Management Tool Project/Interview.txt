@@ -1,0 +1,46 @@
+Requirements
+
+Software for a project management tool.
+
+Legend:
+MR = Major Requirement
+LR = Lesser Requirement
+
+Requirements for Product Backlog:
+Simple is best
+
+ REQ 1 MR -Product Backlog:
+        Product backlog must exist: 
+            - Add task, add attributes, edit tasks, priorities, task name and description, tags, task status, assignee, comments. 
+            Task as cards, cards expand when clicked.
+            Details on cards : Name, tag, priority and story points. 
+            Filter functionality: Filter based on Tags(UI, Testing, eg)
+            No start or completion dates
+
+ REQ 2 MR - Sprint Board:
+        Must Exist:
+            - Add sprints, show sprint name, duration from when it started to end start date and end date, status of the sprint. 
+            - Add task from product backlog to sprint.
+            - Filter functionality optional.
+            - Sorting functionality optional based on earliest finish/end. 
+            - Task should disappear from the product backlog if added into sprint board. 
+            - System shouldnt allow users to edit and move tasks in the middle of the Sprint
+            - Drag and drop windows between sprint and product backlog
+            - Manage Sprint
+            - Completed tasks must not be in the product backlog and instead be in the completed section in the sprint board
+            - Tasks shouldnt be carried over to the next sprint 
+            - View should look as a kanban board 
+            - Assignees can assign other people
+            - When someone is working in a task in a sprint (Assignees), time on a task should be able to be logged in minutes
+            - Total time spent on each task should be calculated
+            - Time each assignee takes on each task. 
+            - In each date, there should be the total time taken and total time taken per assignee. 
+            - Burndown chart. Ideal velocity, actual velocity, accumulation of effort based on days. 
+    
+ REQ 3 MR - Add members to the project with the name and email address:
+            - Delete members
+            - Average time per day each member for a given period of time
+            - Select dates for the given period of time
+            - Calendar popping out is a bonus feature
+            - Graph for each member [time spent per day towards the whole project life cycle] Bar Graph 
+        
